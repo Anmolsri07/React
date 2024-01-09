@@ -31,7 +31,7 @@ export default function TextForm(props) {
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <textarea
-            class="form-control"
+            className="form-control"
             id="box"
             rows="8"
             value={text}
