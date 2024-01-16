@@ -11,17 +11,20 @@ function App() {
 
   const showAlert = (message, Type) => {
     setAlert({ msg: message, Type: Type });
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
   };
 
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "grey";
-      showAlert("Dark Mode has been Enabled ", "Success");
+      showAlert("Dark Mode has been Enabled ", "success");
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      showAlert("light Mode has been Enabled ", "Success");
+      showAlert("light Mode has been Enabled ", "success");
     }
   };
 
@@ -31,7 +34,11 @@ function App() {
       {/* <Navbar></Navbar> */}
       <Alert alert={alert}></Alert>
       <div className="container my-3 ">
-        <TextForm heading="Enter the Text to Analyze" mode={mode}></TextForm>
+        <TextForm
+          heading="Enter the Text to Analyze"
+          mode={mode}
+          showAlert={showAlert}
+        ></TextForm>
       </div>
 
       <About></About>

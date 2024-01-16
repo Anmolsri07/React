@@ -5,11 +5,13 @@ export default function TextForm(props) {
     console.log("upper case clicked" + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("converted to upper case", "success");
   };
   const handeLowClick = () => {
     console.log("upper case clicked" + text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("converted to lower case", "success");
   };
   const clearClick = () => {
     // console.log("upper case clicked" + text);
