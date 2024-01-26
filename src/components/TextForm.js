@@ -16,7 +16,9 @@ export default function TextForm(props) {
   const clearClick = () => {
     // console.log("upper case clicked" + text);
     // let newText = text.toLowerCase();
-    setText(" ");
+    let newText = "";
+    setText(newText);
+    props.showAlert("Text cleared", "success");
   };
 
   const handleOnChange = (event) => {
@@ -27,6 +29,7 @@ export default function TextForm(props) {
   const [text, setText] = useState("");
   // text="new text" //wrong way to change state
   // setText("new text"); //correct wayto change state
+
   console.log(props);
   return (
     <>
@@ -99,11 +102,7 @@ export default function TextForm(props) {
           Minutes read
         </p>
         <h2>Preview</h2>
-        <p>
-          {text.length > 0
-            ? text
-            : "Enter something in the Textbox above to Preview it here"}
-        </p>
+        <p>{text.length > 0 ? text : "Nothing to Preview"}</p>
       </div>
     </>
   );
